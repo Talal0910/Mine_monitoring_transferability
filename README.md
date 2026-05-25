@@ -165,8 +165,6 @@ In this sense, the environmental cost of computation must be balanced against th
 ### Limitations of the environmental assessment
 
 This project did not perform a full carbon audit of cloud computing, satellite infrastructure or data storage. The assessment is therefore qualitative rather than a precise emissions calculation. Future work could improve this by recording runtime, hardware type, energy use and estimated carbon emissions using tools such as CodeCarbon or CarbonTracker.
-## How to Run section
-
 
 ## How to Run
 
