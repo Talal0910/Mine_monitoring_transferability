@@ -4,7 +4,7 @@
 
 This project investigates whether machine learning models trained to identify operational mining disturbance at one open-pit mine can generalise to a geographically and geologically distinct mine site. Sentinel-2 imagery was used to classify disturbed mining land and surrounding background terrain at Chuquicamata, Chile, and Mount Whaleback, Australia.
 
-The project focuses on model transferability: a key issue for operational Earth observation workflows. If a model performs well only at the site where it was trained, its usefulness for scalable mine monitoring is limited. This notebook therefore tests direct cross-site transfer, investigates spectral domain shift using PCA and feature importance analysis evaluating whether limited site-specific training data can improve model generalisation.
+The project focuses on model transferability: a key issue for operational Earth observation workflows. If a model performs well only at the site where it was trained, its usefulness for scalable mine monitoring is limited. This project therefore tests direct cross-site transfer, investigates spectral domain shift using PCA and feature importance analysis, and evaluates whether limited site-specific training data can improve model generalisation.
 
 ## Research Question
 
@@ -52,8 +52,6 @@ The workflow consisted of the following steps:
 7. Local and cross-site transferability experiments were conducted.
 8. Feature importance and PCA were used to interpret model behaviour.
 9. Mixed-site training was tested as a transferability improvement strategy.
-
-## Key Results
 
 ## Key Results
 
@@ -116,6 +114,7 @@ The mixed-site classification maps also showed improved spatial coherence compar
 **Mount Whaleback mixed-site classification**
 
 ![Mount Whaleback mixed-site RF classification](key%20figs/mixed_site_RF.png)
+
 ## Environmental Cost and Sustainability Assessment
 
 This project considered the environmental cost of the research workflow in two ways: the computational cost of running the machine learning analysis, and the wider environmental relevance of scalable satellite-based mine monitoring.
@@ -126,11 +125,11 @@ The modelling workflow used a Random Forest classifier rather than a deep learni
 
 The main computational steps were:
 
-- loading and resampling Sentinel-2 bands,
-- calculating NDVI and BSI,
-- rasterising polygon labels,
-- training Random Forest models,
-- running PCA and feature importance analysis.
+- loading and resampling Sentinel-2 bands
+- calculating NDVI and BSI
+- rasterising polygon labels
+- training Random Forest models
+- running PCA and feature importance analysis
 
 Compared with CNNs, U-Nets or transformer-based Earth observation models, this workflow has a relatively low computational footprint. This reduces energy demand and makes the approach more accessible for small research projects or operational teams without high-performance computing resources.
 
@@ -155,11 +154,11 @@ train a base model
 
 Although mining is environmentally disruptive, satellite-based monitoring can support better environmental management. An automated EO workflow could help identify:
 
-expansion of disturbed land,
-growth of waste dumps or tailings areas,
-rehabilitation progress,
-unexpected or unlicensed disturbance,
-areas requiring closer inspection.
+- expansion of disturbed land
+- growth of waste dumps or tailings areas
+- rehabilitation progress
+- unexpected or unlicensed disturbance
+- areas requiring closer inspection
 
 In this sense, the environmental cost of computation must be balanced against the potential benefit of improved monitoring and accountability. A lightweight, reproducible model using open satellite data may support more frequent monitoring without requiring repeated site visits or expensive aerial surveys.
 
@@ -168,7 +167,7 @@ In this sense, the environmental cost of computation must be balanced against th
 This project did not perform a full carbon audit of cloud computing, satellite infrastructure or data storage. The assessment is therefore qualitative rather than a precise emissions calculation. Future work could improve this by recording runtime, hardware type, energy use and estimated carbon emissions using tools such as CodeCarbon or CarbonTracker.
 ## How to Run section
 
-```markdown
+
 ## How to Run
 
 This project was developed in Google Colab.
@@ -179,7 +178,7 @@ To reproduce the workflow:
 2. Mount Google Drive.
 3. Ensure the Sentinel-2 ZIP files and GeoJSON label files are stored in the expected project folder.
 4. Run the notebook cells sequentially from top to bottom.
-```
+
 Required Python libraries include:
 
 - rasterio
@@ -201,3 +200,14 @@ Key limitations include:
 - The model classifies broad disturbance rather than separating pits, waste dumps, haul roads and infrastructure.
 
 Future work could include testing additional mines, using higher-resolution imagery, separating operational feature classes, and exploring domain adaptation or deep learning segmentation approaches.
+
+## Contact
+
+Author: Talal Khan
+Email: talal.khan.25@ucl.ac.uk
+Institution: University College London
+Course: GEOL0069 - AI for Earth Observation (AI4EO)
+
+## Acknowledgements
+
+This project was created for GEOL0069 at University College London, taught by Dr. Michel Tsamados.
