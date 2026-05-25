@@ -92,7 +92,21 @@ train a base model
 + add limited local labels
 → improve transferability at a new mine site
 ```
+### Environmental relevance of mine monitoring
 
+Although mining is environmentally disruptive, satellite-based monitoring can support better environmental management. An automated EO workflow could help identify:
+
+expansion of disturbed land,
+growth of waste dumps or tailings areas,
+rehabilitation progress,
+unexpected or unlicensed disturbance,
+areas requiring closer inspection.
+
+In this sense, the environmental cost of computation must be balanced against the potential benefit of improved monitoring and accountability. A lightweight, reproducible model using open satellite data may support more frequent monitoring without requiring repeated site visits or expensive aerial surveys.
+
+### Limitations of the environmental assessment
+
+This project did not perform a full carbon audit of cloud computing, satellite infrastructure or data storage. The assessment is therefore qualitative rather than a precise emissions calculation. Future work could improve this by recording runtime, hardware type, energy use and estimated carbon emissions using tools such as CodeCarbon or CarbonTracker.
 ## How to Run section
 
 ```markdown
