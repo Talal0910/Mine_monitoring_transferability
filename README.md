@@ -1,5 +1,20 @@
 # Assessing the Transferability of Machine Learning Models for Operational Open-Pit Mine Monitoring Using Sentinel-2 Imagery
 
+## Contents
+
+- [Overview](#overview)
+- [Research Question](#research-question)
+- [Study Sites](#study-sites)
+- [Data](#data)
+- [Methodology](#methodology)
+- [Key Results](#key-results)
+- [Environmental Cost and Sustainability Assessment](#environmental-cost-and-sustainability-assessment)
+- [How to Run](#how-to-run)
+- [Limitations and Future Work](#limitations-and-future-work)
+- [References](#references)
+- [Contact](#contact)
+- [Acknowledgements](#acknowledgements)
+
 ## Overview
 
 This project investigates whether machine learning models trained to identify operational mining disturbance at one open-pit mine can generalise to a geographically and geologically distinct mine site. Sentinel-2 imagery was used to classify disturbed mining land and surrounding background terrain at Chuquicamata, Chile, and Mount Whaleback, Australia.
@@ -201,6 +216,31 @@ Key limitations include:
 - The model classifies broad disturbance rather than separating pits, waste dumps, haul roads and infrastructure.
 
 Future work could include testing additional mines, using higher-resolution imagery, separating operational feature classes, and exploring domain adaptation or deep learning segmentation approaches.
+
+## References
+
+- European Space Agency. Sentinel-2 Mission Overview.  
+  https://sentinels.copernicus.eu/web/sentinel/missions/sentinel-2
+
+- Copernicus Data Space Ecosystem. Sentinel-2 Data Access and Browser.  
+  https://dataspace.copernicus.eu/
+
+- Breiman, L. (2001). Random Forests. *Machine Learning*, 45, 5–32.  
+  https://doi.org/10.1023/A:1010933404324
+
+- Rouse, J. W., Haas, R. H., Schell, J. A., & Deering, D. W. (1974). Monitoring vegetation systems in the Great Plains with ERTS.
+
+- scikit-learn documentation. RandomForestClassifier.  
+  https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html
+
+- Rasterio documentation.  
+  https://rasterio.readthedocs.io/
+
+- GeoPandas documentation.  
+  https://geopandas.org/
+
+- Folium documentation.  
+  https://python-visualization.github.io/folium/
 
 ## Contact
 
