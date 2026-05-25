@@ -57,20 +57,41 @@ The workflow consisted of the following steps:
 
 Direct transfer between mine sites performed poorly, indicating limited cross-site generalisation. However, mixed-site training using a small amount of labelled data from the target mine substantially improved performance.
 
-## Environmental Considerations
+## Environmental Cost and Sustainability Assessment
 
-This project used a lightweight Random Forest approach rather than computationally intensive deep learning models. This reduced training time and avoided the need for large GPU-based experiments.
+This project considered the environmental cost of the research workflow in two ways: the computational cost of running the machine learning analysis, and the wider environmental relevance of scalable satellite-based mine monitoring.
 
-The transferability focus also has environmental relevance. If models can be adapted to new mine sites using limited labelled data, repeated full retraining and extensive annotation may be reduced. This supports more efficient and scalable Earth observation monitoring workflows.
+### Computational cost of the workflow
 
-## Repository Structure
+The modelling workflow used a Random Forest classifier rather than a deep learning model. This was a deliberate choice because Random Forests are computationally lightweight, interpretable and suitable for tabular pixel-based spectral features. The models trained quickly in Google Colab and did not require prolonged GPU usage or large-scale hyperparameter tuning.
 
-## How to Run
+The main computational steps were:
 
+- loading and resampling Sentinel-2 bands,
+- calculating NDVI and BSI,
+- rasterising polygon labels,
+- training Random Forest models,
+- running PCA and feature importance analysis.
 
-Careful: because this includes a code block inside Markdown, make sure the triple backticks open and close properly.
+Compared with CNNs, U-Nets or transformer-based Earth observation models, this workflow has a relatively low computational footprint. This reduces energy demand and makes the approach more accessible for small research projects or operational teams without high-performance computing resources.
 
----
+### Data efficiency
+
+The project used freely available Sentinel-2 Level-2A imagery. Sentinel-2 provides global, regularly updated surface reflectance data, meaning no additional airborne surveys or field campaigns were required to collect imagery for this experiment.
+
+However, satellite data is not environmentally cost-free. Earth observation systems depend on satellite manufacturing, launch infrastructure, data storage, processing and cloud distribution. The environmental cost of this project is therefore not zero, but the marginal cost of using existing open-access Sentinel-2 imagery is relatively low compared with collecting new bespoke imagery.
+
+### Annotation and retraining cost
+
+A key motivation for investigating transferability is that labelled training data is expensive to produce. If every new mine site requires a fully new set of manual labels and a separately trained model, the workflow becomes less efficient and less scalable.
+
+The direct transfer experiments showed that models trained on one mine did not generalise well to another. However, the mixed-site training results showed that adding a limited amount of target-site data substantially improved performance. This suggests a more efficient operational approach:
+
+```text
+train a base model
++ add limited local labels
+→ improve transferability at a new mine site
+```
 
 ## How to Run section
 
@@ -98,7 +119,6 @@ Required Python libraries include:
 
 ## Limitations and Future Work
 
-## Limitations and Future Work
 
 Key limitations include:
 
