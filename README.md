@@ -6,6 +6,8 @@ This project investigates whether machine learning models trained to identify op
 
 The project focuses on model transferability: a key issue for operational Earth observation workflows. If a model performs well only at the site where it was trained, its usefulness for scalable mine monitoring is limited. This project therefore tests direct cross-site transfer, investigates spectral domain shift using PCA and feature importance analysis, and evaluates whether limited site-specific training data can improve model generalisation.
 
+![Method overview](key%20figs/learning_workflow.png)
+
 ## Research Question
 
 Can a Random Forest model trained to classify operational mining disturbance at one open-pit mine generalise effectively to another mine with different geological, environmental and spectral characteristics?
