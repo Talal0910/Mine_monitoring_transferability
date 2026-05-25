@@ -55,8 +55,67 @@ The workflow consisted of the following steps:
 
 ## Key Results
 
-Direct transfer between mine sites performed poorly, indicating limited cross-site generalisation. However, mixed-site training using a small amount of labelled data from the target mine substantially improved performance.
+## Key Results
 
+### 1. Site-specific Random Forest models performed well
+
+Random Forest models trained and tested within the same mine site were able to classify broad operational disturbance patterns using Sentinel-2 spectral features. This demonstrated that the feature stack contained useful information for separating disturbed mining surfaces from surrounding background terrain.
+
+**Chuquicamata local classification**
+
+![Chuquicamata local Random Forest classification](key%20figs/Local_RF_chuq.png)
+
+**Mount Whaleback local classification**
+
+![Mount Whaleback local Random Forest classification](key%20figs/Local_RF_whale.png)
+
+---
+
+### 2. Direct cross-site transferability was poor
+
+When the Chuquicamata-trained model was applied directly to Mount Whaleback, the model substantially overpredicted disturbed land. This suggests that models trained on one mining environment do not automatically generalise to a geologically and spectrally distinct site.
+
+![Direct transfer result](key%20figs/direct_transfer_result.png)
+
+---
+
+### 3. Feature importance suggested spectral dependence varied between mine sites
+
+Feature importance analysis was used to identify which Sentinel-2 bands and derived indices contributed most strongly to each local Random Forest model. NDVI was the most important feature for both mine sites, suggesting that vegetation absence and bare surface conditions were key drivers of disturbance classification.
+
+**Chuquicamata feature importance**
+
+![Chuquicamata feature importance](key%20figs/Chuq_FI.png)
+
+**Mount Whaleback feature importance**
+
+![Mount Whaleback feature importance](key%20figs/Whale_FI.png)
+
+---
+
+### 4. PCA revealed cross-site domain shift
+
+Principal Component Analysis showed that Chuquicamata and Mount Whaleback occupied different regions of the multispectral feature space. This suggests that site-specific spectral differences were stronger than the disturbed/background class separation alone, helping to explain the poor direct transferability.
+
+![PCA domain shift](key%20figs/PCA_domain_shift.png)
+
+---
+
+### 5. Mixed-site training improved cross-mine transferability
+
+To reduce domain shift, a limited amount of labelled data from the target mine was added to the training dataset. This mixed-site adaptation substantially improved Macro F1-score in both transfer directions.
+
+![Transferability improvement](key%20figs/transfer_improvement.png)
+
+The mixed-site classification maps also showed improved spatial coherence compared with direct transfer alone.
+
+**Chuquicamata mixed-site classification**
+
+![Chuquicamata mixed-site RF classification](key%20figs/mixed_site_chuq.png)
+
+**Mount Whaleback mixed-site classification**
+
+![Mount Whaleback mixed-site RF classification](key%20figs/mixed_site_RF.png)
 ## Environmental Cost and Sustainability Assessment
 
 This project considered the environmental cost of the research workflow in two ways: the computational cost of running the machine learning analysis, and the wider environmental relevance of scalable satellite-based mine monitoring.
