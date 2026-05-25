@@ -21,8 +21,7 @@ These sites were chosen because they represent contrasting geological and spectr
 
 ## Data
 
-![Remote sensing workflow overview](key%20figs/remote_sensing_workflow_overview.png)
-
+![Remote sensing workflow overview](key%20figs/remote_sensing_workflow_overview.jpeg)
 Sentinel-2 Level-2A imagery was used because it provides atmospherically corrected surface reflectance data suitable for land-surface monitoring.
 
 The following bands were used:
